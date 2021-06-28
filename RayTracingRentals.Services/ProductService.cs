@@ -1,0 +1,51 @@
+﻿using RayTracingRentals.Data;
+using RayTracingRentals.Models;
+using RayTracingRentals.Models.Product;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RayTracingRentals.Services
+{
+    public class ProductService
+    {
+        public bool CreateProduct(ProductCreate create)
+        {
+            var entity =
+                new Product()
+                {
+                    Name = create.Name,
+                    Price = create.Price,
+                    FamilyFriendly = create.FamilyFriendly,
+                    Console = create.Console
+                };
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Products.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public IEnumerable<ProductListItem> GetProducts()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Products
+                    .Select(
+                        e =>
+                            new ProductListItem
+                            {
+                                ProductId = e.ProductId,
+                                Name = e.Name,
+                                Price = e.Price
+                            }
+                        );
+                return query.ToArray();
+            }
+        }
+    }
+}

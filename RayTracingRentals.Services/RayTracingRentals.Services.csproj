@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RayTracingRental.Data\RayTracingRentals.Data.csproj">
+      <Project>{78f5b54c-93fa-4166-beb7-49445d28ce17}</Project>
+      <Name>RayTracingRentals.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RayTracingRentals.Models\RayTracingRentals.Models.csproj">
+      <Project>{5c7c361f-010a-4465-896e-88c526ef8c83}</Project>
+      <Name>RayTracingRentals.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
