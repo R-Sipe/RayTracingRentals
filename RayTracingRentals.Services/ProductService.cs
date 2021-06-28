@@ -55,5 +55,25 @@ namespace RayTracingRentals.Services
                 return query.ToArray();
             }
         }
+
+        public ProductDetail GetProductById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Products
+                    .Single(e => e.ProductId == id && e.GameId == _userId);
+                return
+                    new ProductDetail
+                    {
+                        ProductId = entity.ProductId,
+                        Name = entity.Name,
+                        Price = entity.Price,
+                        FamilyFriendly = entity.FamilyFriendly,
+                        Console = entity.Console,
+                    };
+            }
+        }
     }
 }

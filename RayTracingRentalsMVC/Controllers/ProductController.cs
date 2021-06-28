@@ -45,6 +45,14 @@ namespace RayTracingRentalsMVC.Controllers
             return View(product);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateProductService();
+            var model = svc.GetProductById(id);
+
+            return View(model);
+        }
+
         private ProductService CreateProductService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
