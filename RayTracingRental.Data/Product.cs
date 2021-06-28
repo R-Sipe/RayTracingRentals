@@ -13,6 +13,8 @@ namespace RayTracingRentals.Data
         [Key]
         public int ProductId { get; set; }
 
+        public Guid GameId { get; set; }
+
         [Required]
         public string Name { get; set; }
         

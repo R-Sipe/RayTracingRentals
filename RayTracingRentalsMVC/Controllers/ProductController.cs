@@ -1,5 +1,7 @@
-﻿using RayTracingRentals.Models;
+﻿using Microsoft.AspNet.Identity;
+using RayTracingRentals.Models;
 using RayTracingRentals.Models.Product;
+using RayTracingRentals.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +16,9 @@ namespace RayTracingRentalsMVC.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            var model = new ProductListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ProductService(userId);
+            var model = service.GetProducts();
             return View(model);
         }
 
@@ -28,11 +32,16 @@ namespace RayTracingRentalsMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ProductCreate product)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(product);
             }
-            return View(product);
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ProductService(userId);
+
+            service.CreateProduct(product);
+            return RedirectToAction("Index");
         }
     }
 }

@@ -11,11 +11,18 @@ namespace RayTracingRentals.Services
 {
     public class ProductService
     {
+        private readonly Guid _userId;
+
+        public ProductService(Guid userId)
+        {
+            _userId = userId;
+        }
         public bool CreateProduct(ProductCreate create)
         {
             var entity =
                 new Product()
                 {
+                    GameId = _userId,
                     Name = create.Name,
                     Price = create.Price,
                     FamilyFriendly = create.FamilyFriendly,
@@ -35,6 +42,7 @@ namespace RayTracingRentals.Services
                 var query =
                     ctx
                     .Products
+                    .Where(e => e.GameId == _userId)
                     .Select(
                         e =>
                             new ProductListItem
