@@ -56,5 +56,24 @@ namespace RayTracingRentals.Services
                 return query.ToArray();
             }
         }
+
+        public CustomerDetail GetCustomerById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Customers
+                    .Single(e => e.CustomerId == id && e.RenterId == _userId);
+                return
+                    new CustomerDetail
+                    {
+                        CustomerId = entity.CustomerId,
+                        Name = entity.Name,
+                        Email = entity.Email,
+                        PaymentType = entity.PaymentType,
+                    };
+            }
+        }
     }
 }
