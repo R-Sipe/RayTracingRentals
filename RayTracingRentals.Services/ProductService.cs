@@ -92,5 +92,17 @@ namespace RayTracingRentals.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteProduct(int productId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx.Products
+                    .Single(e => e.ProductId == productId && e.GameId == _userId);
+                ctx.Products.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

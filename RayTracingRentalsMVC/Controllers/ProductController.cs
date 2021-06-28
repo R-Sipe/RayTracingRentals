@@ -69,6 +69,50 @@ namespace RayTracingRentalsMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ProductEdit edit)
+        {
+            if (!ModelState.IsValid) return View(edit);
+
+            if(edit.ProductId != id)
+            {
+                ModelState.AddModelError("", "Id does not match.");
+                return View(edit);
+            }
+
+            var service = CreateProductService();
+
+            if (service.UpdateProduct(edit))
+            {
+                TempData["SaveResult"] = "The product has been updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Product could not be updated.");
+            return View(edit);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateProductService();
+            var model = svc.GetProductById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteById(int id)
+        {
+            var service = CreateProductService();
+            service.DeleteProduct(id);
+            TempData["SaveResult"] = "The product was deleted.";
+            return RedirectToAction("Index");
+        }
+
         private ProductService CreateProductService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
