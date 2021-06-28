@@ -75,5 +75,22 @@ namespace RayTracingRentals.Services
                     };
             }
         }
+
+        public bool UpdateProduct(ProductEdit edit)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Products
+                        .Single(e => e.ProductId == edit.ProductId && e.GameId == _userId);
+
+                entity.Name = edit.Name;
+                entity.Price = edit.Price;
+                entity.FamilyFriendly = edit.FamilyFriendly;
+                entity.Console = edit.Console;
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
