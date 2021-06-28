@@ -75,5 +75,33 @@ namespace RayTracingRentals.Services
                     };
             }
         }
+
+        public bool UpdateCustomer(CustomerEdit edit)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Customers
+                        .Single(e => e.CustomerId == edit.CustomerId && e.RenterId == _userId);
+
+                entity.Name = edit.Name;
+                entity.Email = edit.Email;
+                entity.PaymentType = edit.PaymentType;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteCustomer(int customerId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx.Customers
+                    .Single(e => e.CustomerId == customerId && e.RenterId == _userId);
+                ctx.Customers.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

@@ -50,7 +50,64 @@ namespace RayTracingRentalsMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCustomerService();
+            var detail = service.GetCustomerById(id);
+            var model =
+                new CustomerEdit
+                {
+                    CustomerId = detail.CustomerId,
+                    Name = detail.Name,
+                    Email = detail.Email,
+                    PaymentType = detail.PaymentType
+                };
+            return View(model);
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CustomerEdit edit)
+        {
+            if (!ModelState.IsValid) return View(edit);
+
+            if (edit.CustomerId != id)
+            {
+                ModelState.AddModelError("", "Id does not match.");
+                return View(edit);
+            }
+
+            var service = CreateCustomerService();
+
+            if (service.UpdateCustomer(edit))
+            {
+                TempData["SaveResult"] = "The customer has been updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Customer could not be updated.");
+            return View(edit);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateCustomerService();
+            var model = svc.GetCustomerById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteById(int id)
+        {
+            var service = CreateCustomerService();
+            service.DeleteCustomer(id);
+            TempData["SaveResult"] = "The product was deleted.";
+            return RedirectToAction("Index");
+        }
 
         private CustomerService CreateCustomerService()
         {
