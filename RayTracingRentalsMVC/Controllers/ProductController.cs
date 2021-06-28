@@ -32,16 +32,24 @@ namespace RayTracingRentalsMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ProductCreate product)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(product);
-            }
+            if (!ModelState.IsValid) return View(product);
 
+            var service = CreateProductService();
+
+            if (service.CreateProduct(product))
+            {
+                TempData["SaveResult"] = "The product has been created.";
+                return RedirectToAction("Index");
+            };
+            ModelState.AddModelError("", "Product could not be created");
+            return View(product);
+        }
+
+        private ProductService CreateProductService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ProductService(userId);
-
-            service.CreateProduct(product);
-            return RedirectToAction("Index");
+            return service;
         }
     }
 }
