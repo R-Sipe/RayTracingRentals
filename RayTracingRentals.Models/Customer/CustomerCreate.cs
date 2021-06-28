@@ -5,15 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RayTracingRental.Data
+namespace RayTracingRentals.Models.Customer
 {
-    public class Customer
+    public class CustomerCreate
     {
-        [Key]
-        public int CustomerId { get; set; }
-
-        public Guid RenterId { get; set; }
-
         [Required]
         public string Name { get; set; }
 
