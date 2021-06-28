@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using RayTracingRental.Data;
 using RayTracingRentals.Data;
 
 namespace RayTracingRentals.Data
@@ -34,6 +35,7 @@ namespace RayTracingRentals.Data
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
