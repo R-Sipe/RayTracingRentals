@@ -50,25 +50,70 @@
             @Html.DisplayFor(model => model.TotalPrice)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerId)
-        </dt>
+        @foreach (var a in Model.Customers)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => a.CustomerId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.CustomerId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.PaymentType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.PaymentType)
+            </dd>
+        }
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProductId)
-        </dd>
-
+        @foreach (var a in Model.Products)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => a.ProductId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.ProductId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Price)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Price)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.FamilyFriendly)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.FamilyFriendly)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Console)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Console)
+            </dd>
+        }
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = mode.RentalOrderId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RentalOrderId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
