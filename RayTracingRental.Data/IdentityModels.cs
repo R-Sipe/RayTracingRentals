@@ -36,6 +36,7 @@ namespace RayTracingRentals.Data
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<RentalOrder> RentalOrders { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

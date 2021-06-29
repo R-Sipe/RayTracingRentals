@@ -63,6 +63,7 @@
     <Compile Include="Product\ProductEdit.cs" />
     <Compile Include="Product\ProductListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentalOrder\RentalOrderListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
