@@ -1,4 +1,5 @@
-﻿using RayTracingRentals.Data;
+﻿using RayTracingRental.Data;
+using RayTracingRentals.Data;
 using RayTracingRentals.Models.RentalOrder;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,20 @@ namespace RayTracingRentals.Services
 {
     public class RentalOrderService
     {
-        //public bool CreateRentalOrder(RentalOrderCreate create)
-        //{
-
-        //}
+        public bool CreateRentalOrder(RentalOrderCreate create)
+        {
+            var entity =
+                new RentalOrder()
+                {
+                    Name = create.Name,
+                    Created = DateTimeOffset.Now,
+                };
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.RentalOrders.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
 
 
         public IEnumerable<RentalOrderListItem> GetRentalOrders()

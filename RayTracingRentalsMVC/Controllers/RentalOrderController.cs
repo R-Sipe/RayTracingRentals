@@ -1,4 +1,5 @@
-﻿using RayTracingRentals.Services;
+﻿using RayTracingRentals.Models.RentalOrder;
+using RayTracingRentals.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,27 @@ namespace RayTracingRentalsMVC.Controllers
             return View(order);
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(RentalOrderCreate order)
+        {
+            if (!ModelState.IsValid) return View(order);
+
+            var service = CreateRentalOrderService();
+
+            if (service.CreateRentalOrder(order))
+            {
+                TempData["SaveResult"] = "The order has been created.";
+                return RedirectToAction("Index");
+            };
+            ModelState.AddModelError("", "The order could not be created");
+            return View(order);
+        }
 
 
 
