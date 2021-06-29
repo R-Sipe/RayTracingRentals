@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RayTracingRentals.Models.Product
+namespace RayTracingRentals.Models.Products
 {
     public class ProductCreate
     {

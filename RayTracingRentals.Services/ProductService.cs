@@ -1,6 +1,6 @@
 ﻿using RayTracingRentals.Data;
 using RayTracingRentals.Models;
-using RayTracingRentals.Models.Product;
+using RayTracingRentals.Models.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;

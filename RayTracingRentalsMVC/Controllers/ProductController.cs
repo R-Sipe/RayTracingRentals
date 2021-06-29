@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using RayTracingRentals.Models;
-using RayTracingRentals.Models.Product;
+using RayTracingRentals.Models.Products;
 using RayTracingRentals.Services;
 using System;
 using System.Collections.Generic;

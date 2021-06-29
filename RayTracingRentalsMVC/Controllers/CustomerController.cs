@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
-using RayTracingRentals.Models.Customer;
+using RayTracingRentals.Models.Customers;
 using RayTracingRentals.Services;
 using System;
 using System.Collections.Generic;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RayTracingRentals.Models.Customer
+namespace RayTracingRentals.Models.Customers
 {
     public class CustomerEdit
     {
