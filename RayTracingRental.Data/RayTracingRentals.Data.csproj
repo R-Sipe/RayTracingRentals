@@ -56,9 +56,9 @@
   <ItemGroup>
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202106291504559_YoSorry.cs" />
-    <Compile Include="Migrations\202106291504559_YoSorry.Designer.cs">
-      <DependentUpon>202106291504559_YoSorry.cs</DependentUpon>
+    <Compile Include="Migrations\202106291917344_YoWaddup.cs" />
+    <Compile Include="Migrations\202106291917344_YoWaddup.Designer.cs">
+      <DependentUpon>202106291917344_YoWaddup.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
@@ -70,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106291504559_YoSorry.resx">
-      <DependentUpon>202106291504559_YoSorry.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106291917344_YoWaddup.resx">
+      <DependentUpon>202106291917344_YoWaddup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
