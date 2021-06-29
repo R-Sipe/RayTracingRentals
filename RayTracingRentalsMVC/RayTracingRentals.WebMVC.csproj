@@ -249,6 +249,7 @@
     <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\RentalOrder\Index.cshtml" />
     <Content Include="Views\RentalOrder\Create.cshtml" />
+    <Content Include="Views\RentalOrder\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

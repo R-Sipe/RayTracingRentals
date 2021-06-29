@@ -47,5 +47,46 @@ namespace RayTracingRentals.Services
                 return query.ToArray();
             }
         }
+
+        public RentalOrderDetail GetRentalOrderById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .RentalOrders
+                    .Single(e => e.RentalOrderId == id);
+                return
+                    new RentalOrderDetail()
+                    {
+                        RentalOrderId = entity.RentalOrderId,
+                        Name = entity.Name,
+                        Created = entity.Created,
+                        Returned = entity.Returned,
+
+                        Customers = entity.Customers.Select(e => new Customer()
+                        {
+                            RentalOrderId = entity.RentalOrderId,
+                            CustomerId = e.CustomerId,
+                            RenterId = e.RenterId,
+                            Name = e.Name,
+                            Email = e.Email,
+                            PaymentType = e.PaymentType,
+                        }).ToList(),
+
+                        Products = entity.Products.Select(e => new Product()
+                        {
+                            RentalOrderId = entity.RentalOrderId,
+                            ProductId = e.ProductId,
+                            GameId = e.GameId,
+                            Name = e.Name,
+                            Price = e.Price,
+                            FamilyFriendly = e.FamilyFriendly,
+                            Console = e.Console
+                        }).ToList()
+                        
+                    };
+            }
+        }
     }
 }

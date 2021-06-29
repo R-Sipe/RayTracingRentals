@@ -26,7 +26,8 @@ namespace RayTracingRentals.Services
                     RenterId = _userId,
                     Name = create.Name,
                     Email = create.Email,
-                    PaymentType = create.PaymentType
+                    PaymentType = create.PaymentType,
+                    RentalOrderId = create.RentalOrderId
                 };
             using (var ctx = new ApplicationDbContext())
             {

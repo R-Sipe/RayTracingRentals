@@ -40,6 +40,14 @@ namespace RayTracingRentalsMVC.Controllers
             return View(order);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateRentalOrderService();
+            var model = svc.GetRentalOrderById(id);
+
+            return View(model);
+        }
+
 
 
 

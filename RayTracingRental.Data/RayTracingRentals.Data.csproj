@@ -56,25 +56,9 @@
   <ItemGroup>
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202106281418131_InitialCreate.cs" />
-    <Compile Include="Migrations\202106281418131_InitialCreate.Designer.cs">
-      <DependentUpon>202106281418131_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106281556565_InitialMigration.cs" />
-    <Compile Include="Migrations\202106281556565_InitialMigration.Designer.cs">
-      <DependentUpon>202106281556565_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106281909382_secondOne.cs" />
-    <Compile Include="Migrations\202106281909382_secondOne.Designer.cs">
-      <DependentUpon>202106281909382_secondOne.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106281953371_DOIT.cs" />
-    <Compile Include="Migrations\202106281953371_DOIT.Designer.cs">
-      <DependentUpon>202106281953371_DOIT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106291355054_anotheroneYo.cs" />
-    <Compile Include="Migrations\202106291355054_anotheroneYo.Designer.cs">
-      <DependentUpon>202106291355054_anotheroneYo.cs</DependentUpon>
+    <Compile Include="Migrations\202106291504559_YoSorry.cs" />
+    <Compile Include="Migrations\202106291504559_YoSorry.Designer.cs">
+      <DependentUpon>202106291504559_YoSorry.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
@@ -86,20 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106281418131_InitialCreate.resx">
-      <DependentUpon>202106281418131_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106281556565_InitialMigration.resx">
-      <DependentUpon>202106281556565_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106281909382_secondOne.resx">
-      <DependentUpon>202106281909382_secondOne.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106281953371_DOIT.resx">
-      <DependentUpon>202106281953371_DOIT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106291355054_anotheroneYo.resx">
-      <DependentUpon>202106291355054_anotheroneYo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106291504559_YoSorry.resx">
+      <DependentUpon>202106291504559_YoSorry.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
