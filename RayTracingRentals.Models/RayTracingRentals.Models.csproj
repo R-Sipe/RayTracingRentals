@@ -65,6 +65,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentalOrder\RentalOrderCreate.cs" />
     <Compile Include="RentalOrder\RentalOrderDetail.cs" />
+    <Compile Include="RentalOrder\RentalOrderEdit.cs" />
     <Compile Include="RentalOrder\RentalOrderListItem.cs" />
   </ItemGroup>
   <ItemGroup>

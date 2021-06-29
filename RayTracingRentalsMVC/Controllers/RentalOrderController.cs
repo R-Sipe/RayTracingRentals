@@ -48,6 +48,43 @@ namespace RayTracingRentalsMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateRentalOrderService();
+            var detail = service.GetRentalOrderById(id);
+            var model =
+                new RentalOrderEdit
+                {
+                    RentalOrderId = detail.RentalOrderId,
+                    Name = detail.Name,
+                    Returned = DateTimeOffset.UtcNow
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, RentalOrderEdit edit)
+        {
+            if (!ModelState.IsValid) return View(edit);
+
+            if (edit.RentalOrderId != id)
+            {
+                ModelState.AddModelError("", "Id does not match.");
+                return View(edit);
+            }
+
+            var service = CreateRentalOrderService();
+
+            if (service.UpdateRentalOrder(edit))
+            {
+                TempData["SaveResult"] = "The rental order has been updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "The rental order could not be updated.");
+            return View(edit);
+        }
 
 
 

@@ -88,5 +88,20 @@ namespace RayTracingRentals.Services
                     };
             }
         }
+
+        public bool UpdateRentalOrder(RentalOrderEdit edit)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .RentalOrders
+                        .Single(e => e.RentalOrderId == edit.RentalOrderId);
+
+                entity.Name = edit.Name;
+                entity.Returned = DateTimeOffset.Now;
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
