@@ -35,10 +35,10 @@ namespace RayTracingRentalsMVC.Controllers
 
             if (service.CreateCustomer(product))
             {
-                TempData["SaveResult"] = "The product has been created.";
+                TempData["SaveResult"] = "The customer has been created.";
                 return RedirectToAction("Index");
             };
-            ModelState.AddModelError("", "Product could not be created");
+            ModelState.AddModelError("", "Customer could not be created");
             return View(product);
         }
 
