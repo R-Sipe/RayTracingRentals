@@ -103,5 +103,17 @@ namespace RayTracingRentals.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteRentalOrder(int rentalOrderId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx.RentalOrders
+                    .Single(e => e.RentalOrderId == rentalOrderId);
+                ctx.RentalOrders.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

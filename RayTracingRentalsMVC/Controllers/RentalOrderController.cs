@@ -86,7 +86,25 @@ namespace RayTracingRentalsMVC.Controllers
             return View(edit);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateRentalOrderService();
+            var model = svc.GetRentalOrderById(id);
 
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteById(int id)
+        {
+            var service = CreateRentalOrderService();
+            service.DeleteRentalOrder(id);
+            TempData["SaveResult"] = "The rental order was deleted.";
+            return RedirectToAction("Index");
+        }
 
         private RentalOrderService CreateRentalOrderService()
         {
