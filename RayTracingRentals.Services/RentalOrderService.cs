@@ -18,6 +18,7 @@ namespace RayTracingRentals.Services
                 {
                     Name = create.Name,
                     Clerk = create.Clerk,
+                    RentalStoreId = create.RentalStoreId,
                     Created = DateTimeOffset.Now,
                 };
             using (var ctx = new ApplicationDbContext())

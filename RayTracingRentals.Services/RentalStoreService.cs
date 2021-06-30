@@ -59,6 +59,7 @@ namespace RayTracingRentals.Services
                 return
                     new RentalStoreDetail()
                     {
+                        RentalStoreId = entity.RentalStoreId,
                         StoreName = entity.StoreName,
                         Location = entity.Location,
                         PhoneNumber = entity.PhoneNumber,
@@ -77,18 +78,31 @@ namespace RayTracingRentals.Services
             }
         }
 
-        public bool UpdateRentalOrder(RentalOrderEdit edit)
+        public bool UpdateRentalStore(RentalStoreEdit edit)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .RentalOrders
-                        .Single(e => e.RentalOrderId == edit.RentalOrderId);
+                        .RentalStores
+                        .Single(e => e.RentalStoreId == edit.RentalStoreId);
 
-                entity.Name = edit.Name;
-                entity.Clerk = edit.Clerk;
-                entity.Returned = DateTimeOffset.Now;
+                entity.StoreName = edit.StoreName;
+                entity.Location = edit.Location;
+                entity.PhoneNumber = edit.PhoneNumber;
+                entity.Website = edit.Website;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteRentalStore(int rentalStoreId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx.RentalStores
+                    .Single(e => e.RentalStoreId == rentalStoreId);
+                ctx.RentalStores.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
         }

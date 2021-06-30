@@ -64,6 +64,10 @@
     <Compile Include="Migrations\202106301325107_AnotherMigration.Designer.cs">
       <DependentUpon>202106301325107_AnotherMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106301502443_PogMigration.cs" />
+    <Compile Include="Migrations\202106301502443_PogMigration.Designer.cs">
+      <DependentUpon>202106301502443_PogMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106301325107_AnotherMigration.resx">
       <DependentUpon>202106301325107_AnotherMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301502443_PogMigration.resx">
+      <DependentUpon>202106301502443_PogMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

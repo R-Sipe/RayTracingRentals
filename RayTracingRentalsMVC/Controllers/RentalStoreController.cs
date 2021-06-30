@@ -49,6 +49,67 @@ namespace RayTracingRentalsMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateRentalStoreService();
+            var detail = service.GetRentalStoreById(id);
+            var model =
+                new RentalStoreEdit
+                {
+                    RentalStoreId = detail.RentalStoreId,
+                    StoreName = detail.StoreName,
+                    Location = detail.Location,
+                    PhoneNumber = detail.PhoneNumber,
+                    Website = detail.Website
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, RentalStoreEdit edit)
+        {
+            if (!ModelState.IsValid) return View(edit);
+
+            if (edit.RentalStoreId != id)
+            {
+                ModelState.AddModelError("", "Id does not match.");
+                return View(edit);
+            }
+
+            var service = CreateRentalStoreService();
+
+            if (service.UpdateRentalStore(edit))
+            {
+                TempData["SaveResult"] = "The rental store has been updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "The rental store could not be updated.");
+            return View(edit);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateRentalStoreService();
+            var model = svc.GetRentalStoreById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteById(int id)
+        {
+            var service = CreateRentalStoreService();
+            service.DeleteRentalStore(id);
+
+            TempData["SaveResult"] = "The rental store was deleted.";
+            return RedirectToAction("Index");
+        }
+
 
         private RentalStoreService CreateRentalStoreService()
         {
