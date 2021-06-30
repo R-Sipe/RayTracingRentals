@@ -63,10 +63,14 @@
     <Compile Include="Products\ProductEdit.cs" />
     <Compile Include="Products\ProductListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RentalOrder\RentalOrderCreate.cs" />
-    <Compile Include="RentalOrder\RentalOrderDetail.cs" />
-    <Compile Include="RentalOrder\RentalOrderEdit.cs" />
-    <Compile Include="RentalOrder\RentalOrderListItem.cs" />
+    <Compile Include="RentalOrders\RentalOrderCreate.cs" />
+    <Compile Include="RentalOrders\RentalOrderDetail.cs" />
+    <Compile Include="RentalOrders\RentalOrderEdit.cs" />
+    <Compile Include="RentalOrders\RentalOrderListItem.cs" />
+    <Compile Include="TheRentalStore\RentalStoreCreate.cs" />
+    <Compile Include="TheRentalStore\RentalStoreDetail.cs" />
+    <Compile Include="TheRentalStore\RentalStoreEdit.cs" />
+    <Compile Include="TheRentalStore\RentalStoreListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
