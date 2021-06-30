@@ -10,6 +10,7 @@ namespace RayTracingRentals.Models.RentalOrder
     {
         public int RentalOrderId { get; set; }
         public string Name { get; set; }
+        public string Clerk { get; set; }
         public DateTimeOffset? Returned { get; set; }
     }
 }

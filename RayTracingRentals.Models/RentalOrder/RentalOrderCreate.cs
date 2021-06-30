@@ -9,6 +9,7 @@ namespace RayTracingRentals.Models.RentalOrder
     public class RentalOrderCreate
     {
         public string Name { get; set; }
+        public string Clerk { get; set; }
 
     }
 }

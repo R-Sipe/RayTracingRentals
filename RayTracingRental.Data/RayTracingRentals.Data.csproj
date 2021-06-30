@@ -60,6 +60,10 @@
     <Compile Include="Migrations\202106291917344_YoWaddup.Designer.cs">
       <DependentUpon>202106291917344_YoWaddup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106301325107_AnotherMigration.cs" />
+    <Compile Include="Migrations\202106301325107_AnotherMigration.Designer.cs">
+      <DependentUpon>202106301325107_AnotherMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106291917344_YoWaddup.resx">
       <DependentUpon>202106291917344_YoWaddup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301325107_AnotherMigration.resx">
+      <DependentUpon>202106301325107_AnotherMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

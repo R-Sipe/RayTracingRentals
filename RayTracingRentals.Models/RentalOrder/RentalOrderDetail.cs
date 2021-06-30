@@ -14,6 +14,7 @@ namespace RayTracingRentals.Models.RentalOrder
         public string Name { get; set; }
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Returned { get; set; }
+        public string Clerk { get; set; }
 
         decimal Total = 0;
         public decimal TotalPrice

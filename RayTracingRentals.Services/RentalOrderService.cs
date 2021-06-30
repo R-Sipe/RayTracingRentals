@@ -17,6 +17,7 @@ namespace RayTracingRentals.Services
                 new RentalOrder()
                 {
                     Name = create.Name,
+                    Clerk = create.Clerk,
                     Created = DateTimeOffset.Now,
                 };
             using (var ctx = new ApplicationDbContext())
@@ -61,6 +62,7 @@ namespace RayTracingRentals.Services
                     {
                         RentalOrderId = entity.RentalOrderId,
                         Name = entity.Name,
+                        Clerk = entity.Clerk,
                         Created = entity.Created,
                         Returned = entity.Returned,
 
@@ -99,6 +101,7 @@ namespace RayTracingRentals.Services
                         .Single(e => e.RentalOrderId == edit.RentalOrderId);
 
                 entity.Name = edit.Name;
+                entity.Clerk = edit.Clerk;
                 entity.Returned = DateTimeOffset.Now;
                 return ctx.SaveChanges() == 1;
             }
