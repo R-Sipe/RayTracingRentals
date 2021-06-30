@@ -102,6 +102,7 @@ namespace RayTracingRentalsMVC.Controllers
         {
             var service = CreateRentalOrderService();
             service.DeleteRentalOrder(id);
+            
             TempData["SaveResult"] = "The rental order was deleted.";
             return RedirectToAction("Index");
         }
