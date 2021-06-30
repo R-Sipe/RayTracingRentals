@@ -18,6 +18,7 @@ namespace RayTracingRental.Data
         public DateTimeOffset Created { get; set; }
         public DateTimeOffset? Returned { get; set; }
         public decimal TotalPrice { get; set; }
+        public string Clerk { get; set; }
         public int CustomerId { get; set; }
         public virtual List<Customer> Customers { get; set; }
         public int ProductId { get; set; }
