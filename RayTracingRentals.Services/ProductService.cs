@@ -1,6 +1,6 @@
 ﻿using RayTracingRentals.Data;
 using RayTracingRentals.Models;
-using RayTracingRentals.Models.Product;
+using RayTracingRentals.Models.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +26,8 @@ namespace RayTracingRentals.Services
                     Name = create.Name,
                     Price = create.Price,
                     FamilyFriendly = create.FamilyFriendly,
-                    Console = create.Console
+                    Console = create.Console,
+                    RentalOrderId = create.RentalOrderId
                 };
             using (var ctx = new ApplicationDbContext())
             {

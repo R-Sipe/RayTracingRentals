@@ -7,13 +7,13 @@ namespace RayTracingRental.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialMigration : IMigrationMetadata
+    public sealed partial class AnotherMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AnotherMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106281556565_InitialMigration"; }
+            get { return "202106301325107_AnotherMigration"; }
         }
         
         string IMigrationMetadata.Source

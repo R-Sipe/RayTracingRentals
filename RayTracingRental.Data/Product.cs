@@ -26,5 +26,7 @@ namespace RayTracingRentals.Data
         
         [Required]
         public GameConsole Console { get; set; }
+
+        public int RentalOrderId { get; set; }
     }
 }

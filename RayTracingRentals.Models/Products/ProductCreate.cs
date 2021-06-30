@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RayTracingRentals.Models.Product
+namespace RayTracingRentals.Models.Products
 {
     public class ProductCreate
     {
@@ -22,5 +22,6 @@ namespace RayTracingRentals.Models.Product
 
         [Required]
         public GameConsole Console { get; set; }
+        public int RentalOrderId { get; set; }
     }
 }

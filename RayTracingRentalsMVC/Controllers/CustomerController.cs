@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
-using RayTracingRentals.Models;
-using RayTracingRentals.Models.Products;
+using RayTracingRentals.Models.Customers;
 using RayTracingRentals.Services;
 using System;
 using System.Collections.Generic;
@@ -10,19 +9,17 @@ using System.Web.Mvc;
 
 namespace RayTracingRentalsMVC.Controllers
 {
-    [Authorize]
-    public class ProductController : Controller
+    public class CustomerController : Controller
     {
-        // GET: Product
+        // GET: Customer
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ProductService(userId);
-            var model = service.GetProducts();
+            var service = new CustomerService(userId);
+            var model = service.GetCustomers();
             return View(model);
         }
 
-        //GET: create
         public ActionResult Create()
         {
             return View();
@@ -30,74 +27,73 @@ namespace RayTracingRentalsMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ProductCreate product)
+        public ActionResult Create(CustomerCreate product)
         {
             if (!ModelState.IsValid) return View(product);
 
-            var service = CreateProductService();
+            var service = CreateCustomerService();
 
-            if (service.CreateProduct(product))
+            if (service.CreateCustomer(product))
             {
-                TempData["SaveResult"] = "The product has been created.";
+                TempData["SaveResult"] = "The customer has been created.";
                 return RedirectToAction("Index");
             };
-            ModelState.AddModelError("", "Product could not be created");
+            ModelState.AddModelError("", "Customer could not be created");
             return View(product);
         }
 
         public ActionResult Details(int id)
         {
-            var svc = CreateProductService();
-            var model = svc.GetProductById(id);
+            var svc = CreateCustomerService();
+            var model = svc.GetCustomerById(id);
 
             return View(model);
         }
 
         public ActionResult Edit(int id)
         {
-            var service = CreateProductService();
-            var detail = service.GetProductById(id);
+            var service = CreateCustomerService();
+            var detail = service.GetCustomerById(id);
             var model =
-                new ProductEdit
+                new CustomerEdit
                 {
-                    ProductId = detail.ProductId,
+                    CustomerId = detail.CustomerId,
                     Name = detail.Name,
-                    Price = detail.Price,
-                    FamilyFriendly = detail.FamilyFriendly,
-                    Console = detail.Console
+                    Email = detail.Email,
+                    PaymentType = detail.PaymentType
                 };
             return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, ProductEdit edit)
+        public ActionResult Edit(int id, CustomerEdit edit)
         {
             if (!ModelState.IsValid) return View(edit);
 
-            if(edit.ProductId != id)
+            if (edit.CustomerId != id)
             {
                 ModelState.AddModelError("", "Id does not match.");
                 return View(edit);
             }
 
-            var service = CreateProductService();
+            var service = CreateCustomerService();
 
-            if (service.UpdateProduct(edit))
+            if (service.UpdateCustomer(edit))
             {
-                TempData["SaveResult"] = "The product has been updated.";
+                TempData["SaveResult"] = "The customer has been updated.";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Product could not be updated.");
+            ModelState.AddModelError("", "Customer could not be updated.");
             return View(edit);
         }
 
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {
-            var svc = CreateProductService();
-            var model = svc.GetProductById(id);
+            var svc = CreateCustomerService();
+            var model = svc.GetCustomerById(id);
 
             return View(model);
         }
@@ -107,16 +103,16 @@ namespace RayTracingRentalsMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteById(int id)
         {
-            var service = CreateProductService();
-            service.DeleteProduct(id);
+            var service = CreateCustomerService();
+            service.DeleteCustomer(id);
             TempData["SaveResult"] = "The product was deleted.";
             return RedirectToAction("Index");
         }
 
-        private ProductService CreateProductService()
+        private CustomerService CreateCustomerService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ProductService(userId);
+            var service = new CustomerService(userId);
             return service;
         }
     }

@@ -1,4 +1,4 @@
-﻿@model RayTracingRentals.Models.Products.ProductDetail
+﻿@model RayTracingRentals.Models.Customers.CustomerDetail
 
 @{
     ViewBag.Title = "Delete";
@@ -8,15 +8,15 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>ProductDetail</h4>
+    <h4>CustomerDetail</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ProductId)
+            @Html.DisplayNameFor(model => model.CustomerId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ProductId)
+            @Html.DisplayFor(model => model.CustomerId)
         </dd>
 
         <dt>
@@ -28,19 +28,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Price)
+            @Html.DisplayNameFor(model => model.Email)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Price)
+            @Html.DisplayFor(model => model.Email)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FamilyFriendly)
+            @Html.DisplayNameFor(model => model.PaymentType)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FamilyFriendly)
+            @Html.DisplayFor(model => model.PaymentType)
         </dd>
 
     </dl>
