@@ -1,4 +1,4 @@
-﻿using RayTracingRentals.Models.RentalOrder;
+﻿using RayTracingRentals.Models.RentalOrders;
 using RayTracingRentals.Services;
 using System;
 using System.Collections.Generic;

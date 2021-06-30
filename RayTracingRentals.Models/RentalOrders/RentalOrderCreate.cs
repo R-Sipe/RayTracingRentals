@@ -5,20 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RayTracingRentals.Models.Customers
+namespace RayTracingRentals.Models.RentalOrders
 {
-    public class CustomerCreate
+    public class RentalOrderCreate
     {
         [Required]
         public string Name { get; set; }
+        
+        [Required]
+        public string Clerk { get; set; }
 
         [Required]
-        public string Email { get; set; }
+        public int RentalStoreId { get; set; }
 
-        [Required]
-        public string PaymentType { get; set; }
-
-        [Required]
-        public int RentalOrderId { get; set; }
     }
 }

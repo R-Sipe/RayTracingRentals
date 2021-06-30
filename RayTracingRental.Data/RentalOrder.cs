@@ -23,5 +23,6 @@ namespace RayTracingRental.Data
         public virtual List<Customer> Customers { get; set; }
         public int ProductId { get; set; }
         public virtual List<Product> Products { get; set; }
+        public int RentalStoreId { get; set; }
     }
 }
