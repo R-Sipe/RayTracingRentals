@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using RayTracingRental.Data;
 using RayTracingRentals.Models.Customers;
 using RayTracingRentals.Services;
 using System;
@@ -22,6 +23,12 @@ namespace RayTracingRentalsMVC.Controllers
 
         public ActionResult Create()
         {
+            List<RentalOrder> orders = (new RentalOrderService()).GetRentalOrderList().ToList();
+            ViewBag.RentalOrderId = orders.Select(o => new SelectListItem
+            {
+                Value = o.RentalOrderId.ToString(),
+                Text = o.Name,
+            });
             return View();
         }
 

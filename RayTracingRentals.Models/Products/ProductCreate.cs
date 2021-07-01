@@ -23,5 +23,7 @@ namespace RayTracingRentals.Models.Products
         [Required]
         public GameConsole Console { get; set; }
         public int RentalOrderId { get; set; }
+
+        //public SelectList 
     }
 }

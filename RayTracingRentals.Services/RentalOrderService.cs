@@ -49,6 +49,13 @@ namespace RayTracingRentals.Services
                 return query.ToArray();
             }
         }
+        public IEnumerable<RentalOrder> GetRentalOrderList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.RentalOrders.ToList();
+            }
+        }
 
         public RentalOrderDetail GetRentalOrderById(int id)
         {

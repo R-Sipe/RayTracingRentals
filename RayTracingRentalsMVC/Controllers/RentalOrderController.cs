@@ -1,4 +1,5 @@
-﻿using RayTracingRentals.Models.RentalOrders;
+﻿using RayTracingRental.Data;
+using RayTracingRentals.Models.RentalOrders;
 using RayTracingRentals.Services;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,12 @@ namespace RayTracingRentalsMVC.Controllers
 
         public ActionResult Create()
         {
+            List<RentalStore> stores = (new RentalStoreService()).GetRentalStoreList().ToList();
+            ViewBag.RentalStoreId = stores.Select(o => new SelectListItem
+            {
+                Value = o.RentalStoreId.ToString(),
+                Text = o.StoreName,
+            });
             return View();
         }
 

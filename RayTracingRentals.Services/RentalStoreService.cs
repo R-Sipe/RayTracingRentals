@@ -48,6 +48,14 @@ namespace RayTracingRentals.Services
             }
         }
 
+        public IEnumerable<RentalStore> GetRentalStoreList()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                return ctx.RentalStores.ToList();
+            }
+        }
+
         public RentalStoreDetail GetRentalStoreById(int id)
         {
             using (var ctx = new ApplicationDbContext())
