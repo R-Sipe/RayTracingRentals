@@ -42,13 +42,13 @@ namespace RayTracingRentals.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<RentalStore>()
-            .HasOptional(s => (RentalOrder)s.RentalOrders)
-            .WithMany()
-            .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<RentalOrder>()
+            //.HasOptional(s => (Customer)s.Customers)
+            //.WithMany()
+            //.WillCascadeOnDelete(false);
 
             //modelBuilder.Entity<RentalOrder>()
-            //.HasMany<Product>(p => p.Products)
+            //.HasMany<Customer>(p => p.Customers)
             //.WithOptional()
             //.WillCascadeOnDelete(false);
 

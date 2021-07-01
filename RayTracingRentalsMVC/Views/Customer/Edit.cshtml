@@ -41,6 +41,14 @@
     </div>
 
     <div class="form-group">
+        @Html.LabelFor(model => model.RentalOrderId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.RentalOrderId, ViewBag.RentalOrderId as SelectList, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RentalOrderId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Save" class="btn btn-default" />
         </div>
