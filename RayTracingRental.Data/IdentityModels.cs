@@ -42,8 +42,16 @@ namespace RayTracingRentals.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<RentalStore>()
+            .HasOptional(s => (RentalOrder)s.RentalOrders)
+            .WithMany()
+            .WillCascadeOnDelete(false);
 
-            
+            //modelBuilder.Entity<RentalOrder>()
+            //.HasMany<Product>(p => p.Products)
+            //.WithOptional()
+            //.WillCascadeOnDelete(false);
+
             modelBuilder
                 .Conventions
                 .Remove<PluralizingTableNameConvention>();
@@ -53,10 +61,7 @@ namespace RayTracingRentals.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
 
-            //modelBuilder.Entity<RentalOrder>()
-            //.HasOptional(p => (Product)p.Products)
-            //.WithMany()
-            //.WillCascadeOnDelete(false);
+            
 
         }
     }

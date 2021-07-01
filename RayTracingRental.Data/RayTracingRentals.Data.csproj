@@ -60,6 +60,30 @@
     <Compile Include="Migrations\202107011613177_PoggMigration.Designer.cs">
       <DependentUpon>202107011613177_PoggMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107011713480_PoppieMigration.cs" />
+    <Compile Include="Migrations\202107011713480_PoppieMigration.Designer.cs">
+      <DependentUpon>202107011713480_PoppieMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107011716160_IppieMigration.cs" />
+    <Compile Include="Migrations\202107011716160_IppieMigration.Designer.cs">
+      <DependentUpon>202107011716160_IppieMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107011735365_PieMigration.cs" />
+    <Compile Include="Migrations\202107011735365_PieMigration.Designer.cs">
+      <DependentUpon>202107011735365_PieMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107011738073_IeMigration.cs" />
+    <Compile Include="Migrations\202107011738073_IeMigration.Designer.cs">
+      <DependentUpon>202107011738073_IeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107011747346_PPeMigration.cs" />
+    <Compile Include="Migrations\202107011747346_PPeMigration.Designer.cs">
+      <DependentUpon>202107011747346_PPeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107011838524_StopMigration.cs" />
+    <Compile Include="Migrations\202107011838524_StopMigration.Designer.cs">
+      <DependentUpon>202107011838524_StopMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +97,24 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202107011613177_PoggMigration.resx">
       <DependentUpon>202107011613177_PoggMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011713480_PoppieMigration.resx">
+      <DependentUpon>202107011713480_PoppieMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011716160_IppieMigration.resx">
+      <DependentUpon>202107011716160_IppieMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011735365_PieMigration.resx">
+      <DependentUpon>202107011735365_PieMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011738073_IeMigration.resx">
+      <DependentUpon>202107011738073_IeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011747346_PPeMigration.resx">
+      <DependentUpon>202107011747346_PPeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011838524_StopMigration.resx">
+      <DependentUpon>202107011838524_StopMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
