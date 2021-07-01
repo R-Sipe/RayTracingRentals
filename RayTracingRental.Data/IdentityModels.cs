@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -41,6 +42,8 @@ namespace RayTracingRentals.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+
+            
             modelBuilder
                 .Conventions
                 .Remove<PluralizingTableNameConvention>();
@@ -49,6 +52,12 @@ namespace RayTracingRentals.Data
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
+
+            //modelBuilder.Entity<RentalOrder>()
+            //.HasOptional(p => (Product)p.Products)
+            //.WithMany()
+            //.WillCascadeOnDelete(false);
+
         }
     }
 

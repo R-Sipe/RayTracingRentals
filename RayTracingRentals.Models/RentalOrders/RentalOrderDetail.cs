@@ -29,8 +29,8 @@ namespace RayTracingRentals.Models.RentalOrders
             }
         }
         public int CustomerId { get; set; }
-        public virtual List<Customer> Customers { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
         public int ProductId { get; set; }
-        public virtual List<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }
