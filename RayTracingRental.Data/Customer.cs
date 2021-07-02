@@ -24,5 +24,6 @@ namespace RayTracingRental.Data
         public string PaymentType { get; set; }
 
         public int RentalOrderId { get; set; }
+        //public RentalOrder RentalOrder { get; set; }
     }
 }

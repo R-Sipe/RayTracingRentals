@@ -68,6 +68,10 @@
     <Compile Include="Migrations\202107011952000_HelMigration.Designer.cs">
       <DependentUpon>202107011952000_HelMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107012052278_HpMigration.cs" />
+    <Compile Include="Migrations\202107012052278_HpMigration.Designer.cs">
+      <DependentUpon>202107012052278_HpMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107011952000_HelMigration.resx">
       <DependentUpon>202107011952000_HelMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107012052278_HpMigration.resx">
+      <DependentUpon>202107012052278_HpMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

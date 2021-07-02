@@ -42,6 +42,11 @@ namespace RayTracingRentals.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //modelBuilder.Entity<RentalOrder>().HasMany(c => c.Customers)
+            //    .WithRequired(c => c.RentalOrder)
+            //    .HasForeignKey(c => c.RentalOrderId)
+            //    .WillCascadeOnDelete(false);
+
             //modelBuilder.Entity<RentalOrder>()
             //.HasOptional(s => (Customer)s.Customers)
             //.WithMany()
