@@ -1,4 +1,5 @@
 ﻿@model RayTracingRentals.Models.RentalOrders.RentalOrderEdit
+@using RayTracingRentals.Data
 @using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Edit";
@@ -16,6 +17,15 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.RentalOrderId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RentalStoreId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.RentalStoreId, ViewBag.RentalStoreId as SelectList, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RentalStoreId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

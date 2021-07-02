@@ -69,6 +69,7 @@ namespace RayTracingRentalsMVC.Controllers
             {
                 Value = o.RentalOrderId.ToString(),
                 Text = o.Name,
+                Selected = service.RentalOrderId == o.RentalOrderId
             });
 
             return View(new ProductEdit
