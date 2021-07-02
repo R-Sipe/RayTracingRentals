@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -41,6 +42,21 @@ namespace RayTracingRentals.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //modelBuilder.Entity<RentalOrder>().HasMany(c => c.Customers)
+            //    .WithRequired(c => c.RentalOrder)
+            //    .HasForeignKey(c => c.RentalOrderId)
+            //    .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<RentalOrder>()
+            //.HasOptional(s => (Customer)s.Customers)
+            //.WithMany()
+            //.WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<RentalOrder>()
+            //.HasMany<Customer>(p => p.Customers)
+            //.WithOptional()
+            //.WillCascadeOnDelete(false);
+
             modelBuilder
                 .Conventions
                 .Remove<PluralizingTableNameConvention>();
@@ -49,6 +65,9 @@ namespace RayTracingRentals.Data
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
+
+            
+
         }
     }
 

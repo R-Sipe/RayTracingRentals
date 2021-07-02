@@ -56,17 +56,25 @@
   <ItemGroup>
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202106291917344_YoWaddup.cs" />
-    <Compile Include="Migrations\202106291917344_YoWaddup.Designer.cs">
-      <DependentUpon>202106291917344_YoWaddup.cs</DependentUpon>
+    <Compile Include="Migrations\202107011904541_HelpMeMigration.cs" />
+    <Compile Include="Migrations\202107011904541_HelpMeMigration.Designer.cs">
+      <DependentUpon>202107011904541_HelpMeMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106301325107_AnotherMigration.cs" />
-    <Compile Include="Migrations\202106301325107_AnotherMigration.Designer.cs">
-      <DependentUpon>202106301325107_AnotherMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202107011912168_HelpMigration.cs" />
+    <Compile Include="Migrations\202107011912168_HelpMigration.Designer.cs">
+      <DependentUpon>202107011912168_HelpMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106301502443_PogMigration.cs" />
-    <Compile Include="Migrations\202106301502443_PogMigration.Designer.cs">
-      <DependentUpon>202106301502443_PogMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202107011952000_HelMigration.cs" />
+    <Compile Include="Migrations\202107011952000_HelMigration.Designer.cs">
+      <DependentUpon>202107011952000_HelMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107012052278_HpMigration.cs" />
+    <Compile Include="Migrations\202107012052278_HpMigration.Designer.cs">
+      <DependentUpon>202107012052278_HpMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107021348469_YOniceMigration.cs" />
+    <Compile Include="Migrations\202107021348469_YOniceMigration.Designer.cs">
+      <DependentUpon>202107021348469_YOniceMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
@@ -79,14 +87,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106291917344_YoWaddup.resx">
-      <DependentUpon>202106291917344_YoWaddup.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107011904541_HelpMeMigration.resx">
+      <DependentUpon>202107011904541_HelpMeMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106301325107_AnotherMigration.resx">
-      <DependentUpon>202106301325107_AnotherMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107011912168_HelpMigration.resx">
+      <DependentUpon>202107011912168_HelpMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106301502443_PogMigration.resx">
-      <DependentUpon>202106301502443_PogMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107011952000_HelMigration.resx">
+      <DependentUpon>202107011952000_HelMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107012052278_HpMigration.resx">
+      <DependentUpon>202107012052278_HpMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107021348469_YOniceMigration.resx">
+      <DependentUpon>202107021348469_YOniceMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

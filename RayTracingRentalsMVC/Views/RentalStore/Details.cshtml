@@ -1,13 +1,13 @@
 ﻿@model RayTracingRentals.Models.TheRentalStore.RentalStoreDetail
-
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Hello, @User.Identity.GetUserName()!</h2>
 
 <div>
-    <h4>RentalStoreDetail</h4>
+    <h4>Rental Store Details</h4>
     <hr />
     <dl class="dl-horizontal">
 

@@ -76,7 +76,7 @@ namespace RayTracingRentals.Services
 
                         Customers = entity.Customers.Select(e => new Customer()
                         {
-                            RentalOrderId = entity.RentalOrderId,
+                            //RentalOrderId = entity.RentalOrderId,
                             CustomerId = e.CustomerId,
                             RenterId = e.RenterId,
                             Name = e.Name,
@@ -86,7 +86,7 @@ namespace RayTracingRentals.Services
 
                         Products = entity.Products.Select(e => new Product()
                         {
-                            RentalOrderId = entity.RentalOrderId,
+                            //RentalOrderId = entity.RentalOrderId,
                             ProductId = e.ProductId,
                             GameId = e.GameId,
                             Name = e.Name,

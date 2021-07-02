@@ -57,16 +57,24 @@ namespace RayTracingRentalsMVC.Controllers
 
         public ActionResult Edit(int id)
         {
-            var service = CreateRentalOrderService();
-            var detail = service.GetRentalOrderById(id);
-            var model =
-                new RentalOrderEdit
-                {
-                    RentalOrderId = detail.RentalOrderId,
-                    Name = detail.Name,
-                    Returned = DateTimeOffset.UtcNow
-                };
-            return View(model);
+            var service = CreateRentalOrderService().GetRentalOrderById(id);
+
+            List<RentalStore> stores = (new RentalStoreService()).GetRentalStoreList().ToList();
+            ViewBag.RentalStoreId = stores.Select(o => new SelectListItem()
+            {
+                Value = o.RentalStoreId.ToString(),
+                Text = o.StoreName,
+                Selected = service.RentalStoreId == o.RentalStoreId
+            });
+
+            return View(new RentalOrderEdit
+            {
+                RentalStoreId = service.RentalStoreId,
+                RentalOrderId = service.RentalOrderId,
+                Name = service.Name,
+               Clerk = service.Clerk,
+               Returned = service.Returned
+            });
         }
 
         [HttpPost]

@@ -24,6 +24,6 @@ namespace RayTracingRental.Data
         [Required]
         public string Website { get; set; }
         public int RentalOrderId { get; set; }
-        public virtual List<RentalOrder> RentalOrders { get; set; } 
+        public virtual ICollection<RentalOrder> RentalOrders { get; set; } 
     }
 }

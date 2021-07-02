@@ -1,21 +1,30 @@
 ﻿@model RayTracingRentals.Models.Products.ProductCreate
 @using RayTracingRentals.Data
-
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Hello, @User.Identity.GetUserName()!</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
 <div class="form-horizontal">
-    <h4>ProductCreate</h4>
+    <h4>Create a Product</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RentalOrderId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.RentalOrderId, ViewBag.RentalOrderId as SelectList, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RentalOrderId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
     <div class="form-group">
         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -33,30 +42,22 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.FamilyFriendly, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.FamilyFriendly)
-                @Html.ValidationMessageFor(model => model.FamilyFriendly, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    </div>
-
-    <div class="form-group">
         @Html.LabelFor(model => model.Console, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        <div class="col-md-10  text-dropdown">
             @Html.DropDownListFor(model => model.Console, new SelectList(Enum.GetValues(typeof(GameConsole))), "Select", new { htmlAttributes = new { @class = "form-control" } })
-            <div class="checkbox">
+            <div class="checkbox  text-dropdown">
                 @Html.ValidationMessageFor(model => model.Console, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.RentalOrderId, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.FamilyFriendly, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.RentalOrderId, ViewBag.RentalOrderId as SelectList, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.RentalOrderId, "", new { @class = "text-danger" })
+            <div class="checkbox">
+                @Html.EditorFor(model => model.FamilyFriendly)
+                @Html.ValidationMessageFor(model => model.FamilyFriendly, "", new { @class = "text-danger" })
+            </div>
         </div>
     </div>
 

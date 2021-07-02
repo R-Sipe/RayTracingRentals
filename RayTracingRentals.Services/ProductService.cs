@@ -86,6 +86,7 @@ namespace RayTracingRentals.Services
                         .Products
                         .Single(e => e.ProductId == edit.ProductId && e.GameId == _userId);
 
+                entity.RentalOrderId = edit.RentalOrderId;
                 entity.Name = edit.Name;
                 entity.Price = edit.Price;
                 entity.FamilyFriendly = edit.FamilyFriendly;

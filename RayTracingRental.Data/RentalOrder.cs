@@ -20,9 +20,9 @@ namespace RayTracingRental.Data
         public decimal TotalPrice { get; set; }
         public string Clerk { get; set; }
         public int CustomerId { get; set; }
-        public virtual List<Customer> Customers { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
         public int ProductId { get; set; }
-        public virtual List<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
         public int RentalStoreId { get; set; }
     }
 }

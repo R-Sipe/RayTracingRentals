@@ -73,6 +73,7 @@ namespace RayTracingRentals.Services
                         Name = entity.Name,
                         Email = entity.Email,
                         PaymentType = entity.PaymentType,
+                        RentalOrderId = entity.RentalOrderId
                     };
             }
         }
@@ -89,6 +90,7 @@ namespace RayTracingRentals.Services
                 entity.Name = edit.Name;
                 entity.Email = edit.Email;
                 entity.PaymentType = edit.PaymentType;
+                entity.RentalOrderId = edit.RentalOrderId;
                 return ctx.SaveChanges() == 1;
             }
         }

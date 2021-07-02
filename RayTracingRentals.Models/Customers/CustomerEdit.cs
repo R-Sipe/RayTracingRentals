@@ -12,5 +12,6 @@ namespace RayTracingRentals.Models.Customers
         public string Name { get; set; }
         public string Email { get; set; }
         public string PaymentType { get; set; }
+        public int RentalOrderId { get; set; }
     }
 }

@@ -7,13 +7,13 @@ namespace RayTracingRental.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class YoWaddup : IMigrationMetadata
+    public sealed partial class HelMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(YoWaddup));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(HelMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106291917344_YoWaddup"; }
+            get { return "202107011952000_HelMigration"; }
         }
         
         string IMigrationMetadata.Source

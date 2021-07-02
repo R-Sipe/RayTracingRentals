@@ -59,17 +59,25 @@ namespace RayTracingRentalsMVC.Controllers
 
         public ActionResult Edit(int id)
         {
-            var service = CreateCustomerService();
-            var detail = service.GetCustomerById(id);
-            var model =
-                new CustomerEdit
-                {
-                    CustomerId = detail.CustomerId,
-                    Name = detail.Name,
-                    Email = detail.Email,
-                    PaymentType = detail.PaymentType
-                };
-            return View(model);
+
+
+            var service = CreateCustomerService().GetCustomerById(id);
+
+            List<RentalOrder> orders = (new RentalOrderService()).GetRentalOrderList().ToList();
+            ViewBag.RentalOrderId = orders.Select(o => new SelectListItem()
+            {
+                Value = o.RentalOrderId.ToString(),
+                Text = o.Name,
+            });
+
+            return View(new CustomerEdit
+            {
+                RentalOrderId = service.RentalOrderId,
+                CustomerId = service.CustomerId,
+                Name = service.Name,
+                Email = service.Email,
+                PaymentType = service.PaymentType,
+            });
         }
 
         [HttpPost]
@@ -112,7 +120,7 @@ namespace RayTracingRentalsMVC.Controllers
         {
             var service = CreateCustomerService();
             service.DeleteCustomer(id);
-            TempData["SaveResult"] = "The product was deleted.";
+            TempData["SaveResult"] = "The customer was deleted.";
             return RedirectToAction("Index");
         }
 

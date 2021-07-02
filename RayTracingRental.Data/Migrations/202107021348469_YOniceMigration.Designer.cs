@@ -7,13 +7,13 @@ namespace RayTracingRental.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class PogMigration : IMigrationMetadata
+    public sealed partial class YOniceMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PogMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(YOniceMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106301502443_PogMigration"; }
+            get { return "202107021348469_YOniceMigration"; }
         }
         
         string IMigrationMetadata.Source
