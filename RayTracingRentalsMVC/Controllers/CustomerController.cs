@@ -72,11 +72,11 @@ namespace RayTracingRentalsMVC.Controllers
 
             return View(new CustomerEdit
             {
+                RentalOrderId = service.RentalOrderId,
                 CustomerId = service.CustomerId,
                 Name = service.Name,
                 Email = service.Email,
                 PaymentType = service.PaymentType,
-                RentalOrderId = service.RentalOrderId,
             });
         }
 
@@ -120,7 +120,7 @@ namespace RayTracingRentalsMVC.Controllers
         {
             var service = CreateCustomerService();
             service.DeleteCustomer(id);
-            TempData["SaveResult"] = "The product was deleted.";
+            TempData["SaveResult"] = "The customer was deleted.";
             return RedirectToAction("Index");
         }
 
