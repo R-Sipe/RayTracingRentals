@@ -1,11 +1,11 @@
 ﻿@model RayTracingRentals.Models.Products.ProductEdit
 @using RayTracingRentals.Data
-
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Hello, @User.Identity.GetUserName()!</h2>
 
 
 @using (Html.BeginForm())
