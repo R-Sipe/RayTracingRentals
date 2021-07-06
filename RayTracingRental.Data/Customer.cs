@@ -10,6 +10,7 @@ namespace RayTracingRental.Data
     public class Customer
     {
         [Key]
+        [Display(Name = "Customer ID")]
         public int CustomerId { get; set; }
 
         public Guid RenterId { get; set; }
@@ -21,6 +22,8 @@ namespace RayTracingRental.Data
         public string Email { get; set; }
 
         [Required]
+        [Display(Name = "Payment Type")]
+
         public string PaymentType { get; set; }
 
         public int RentalOrderId { get; set; }

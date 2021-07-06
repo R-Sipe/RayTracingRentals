@@ -16,9 +16,13 @@ namespace RayTracingRentals.Models.Customers
         public string Email { get; set; }
 
         [Required]
+        [Display(Name = "Payment Type")]
+
         public string PaymentType { get; set; }
 
         [Required]
+        [Display(Name = "Rental Order")]
+
         public int RentalOrderId { get; set; }
     }
 }
