@@ -195,6 +195,7 @@
     <Content Include="Content\bootstrap.min-slate.css" />
     <Content Include="Content\bootstrap.min-vapor.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\denise-jans-uIemlFWQSC4-unsplash.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

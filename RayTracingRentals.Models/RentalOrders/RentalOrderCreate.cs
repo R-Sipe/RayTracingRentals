@@ -16,6 +16,8 @@ namespace RayTracingRentals.Models.RentalOrders
         public string Clerk { get; set; }
 
         [Required]
+        [Display(Name = "Rental Store")]
+
         public int RentalStoreId { get; set; }
 
     }

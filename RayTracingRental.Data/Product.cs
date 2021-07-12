@@ -11,6 +11,8 @@ namespace RayTracingRentals.Data
     public class Product
     {
         [Key]
+        [Display(Name = "Product ID")]
+
         public int ProductId { get; set; }
 
         public Guid GameId { get; set; }
@@ -22,6 +24,8 @@ namespace RayTracingRentals.Data
         public decimal Price { get; set; }
         
         [Required]
+        [Display(Name = "Family Friendly")]
+
         public bool FamilyFriendly { get; set; }
         
         [Required]

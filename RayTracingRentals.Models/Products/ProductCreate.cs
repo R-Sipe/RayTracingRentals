@@ -18,10 +18,15 @@ namespace RayTracingRentals.Models.Products
         public decimal Price { get; set; }
 
         [Required]
+        [Display(Name = "Family Friendly")]
+
         public bool FamilyFriendly { get; set; }
 
         [Required]
         public GameConsole Console { get; set; }
+
+        [Display(Name = "Rental Order")]
+
         public int RentalOrderId { get; set; }
 
         //public SelectList 
