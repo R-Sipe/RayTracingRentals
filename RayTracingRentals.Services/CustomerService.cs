@@ -1,6 +1,6 @@
 ﻿using RayTracingRental.Data;
 using RayTracingRentals.Data;
-using RayTracingRentals.Models.Customer;
+using RayTracingRentals.Models.Customers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +26,8 @@ namespace RayTracingRentals.Services
                     RenterId = _userId,
                     Name = create.Name,
                     Email = create.Email,
-                    PaymentType = create.PaymentType
+                    PaymentType = create.PaymentType,
+                    RentalOrderId = create.RentalOrderId
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -72,6 +73,7 @@ namespace RayTracingRentals.Services
                         Name = entity.Name,
                         Email = entity.Email,
                         PaymentType = entity.PaymentType,
+                        RentalOrderId = entity.RentalOrderId
                     };
             }
         }
@@ -88,6 +90,7 @@ namespace RayTracingRentals.Services
                 entity.Name = edit.Name;
                 entity.Email = edit.Email;
                 entity.PaymentType = edit.PaymentType;
+                entity.RentalOrderId = edit.RentalOrderId;
                 return ctx.SaveChanges() == 1;
             }
         }

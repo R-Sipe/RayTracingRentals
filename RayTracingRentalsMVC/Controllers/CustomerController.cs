@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
-using RayTracingRentals.Models.Customer;
+using RayTracingRental.Data;
+using RayTracingRentals.Models.Customers;
 using RayTracingRentals.Services;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,12 @@ namespace RayTracingRentalsMVC.Controllers
 
         public ActionResult Create()
         {
+            List<RentalOrder> orders = (new RentalOrderService()).GetRentalOrderList().ToList();
+            ViewBag.RentalOrderId = orders.Select(o => new SelectListItem
+            {
+                Value = o.RentalOrderId.ToString(),
+                Text = o.Name,
+            });
             return View();
         }
 
@@ -35,10 +42,10 @@ namespace RayTracingRentalsMVC.Controllers
 
             if (service.CreateCustomer(product))
             {
-                TempData["SaveResult"] = "The product has been created.";
+                TempData["SaveResult"] = "The customer has been created.";
                 return RedirectToAction("Index");
             };
-            ModelState.AddModelError("", "Product could not be created");
+            ModelState.AddModelError("", "Customer could not be created");
             return View(product);
         }
 
@@ -52,17 +59,25 @@ namespace RayTracingRentalsMVC.Controllers
 
         public ActionResult Edit(int id)
         {
-            var service = CreateCustomerService();
-            var detail = service.GetCustomerById(id);
-            var model =
-                new CustomerEdit
-                {
-                    CustomerId = detail.CustomerId,
-                    Name = detail.Name,
-                    Email = detail.Email,
-                    PaymentType = detail.PaymentType
-                };
-            return View(model);
+
+
+            var service = CreateCustomerService().GetCustomerById(id);
+
+            List<RentalOrder> orders = (new RentalOrderService()).GetRentalOrderList().ToList();
+            ViewBag.RentalOrderId = orders.Select(o => new SelectListItem()
+            {
+                Value = o.RentalOrderId.ToString(),
+                Text = o.Name,
+            });
+
+            return View(new CustomerEdit
+            {
+                RentalOrderId = service.RentalOrderId,
+                CustomerId = service.CustomerId,
+                Name = service.Name,
+                Email = service.Email,
+                PaymentType = service.PaymentType,
+            });
         }
 
         [HttpPost]
@@ -105,7 +120,7 @@ namespace RayTracingRentalsMVC.Controllers
         {
             var service = CreateCustomerService();
             service.DeleteCustomer(id);
-            TempData["SaveResult"] = "The product was deleted.";
+            TempData["SaveResult"] = "The customer was deleted.";
             return RedirectToAction("Index");
         }
 

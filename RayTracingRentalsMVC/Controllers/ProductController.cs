@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
+using RayTracingRental.Data;
 using RayTracingRentals.Models;
-using RayTracingRentals.Models.Product;
+using RayTracingRentals.Models.Products;
 using RayTracingRentals.Services;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,12 @@ namespace RayTracingRentalsMVC.Controllers
         //GET: create
         public ActionResult Create()
         {
+            List<RentalOrder> orders = (new RentalOrderService()).GetRentalOrderList().ToList();
+            ViewBag.RentalOrderId = orders.Select(o => new SelectListItem
+            {
+                Value = o.RentalOrderId.ToString(),
+                Text = o.Name,
+            });
             return View();
         }
 
@@ -55,18 +62,25 @@ namespace RayTracingRentalsMVC.Controllers
 
         public ActionResult Edit(int id)
         {
-            var service = CreateProductService();
-            var detail = service.GetProductById(id);
-            var model =
-                new ProductEdit
-                {
-                    ProductId = detail.ProductId,
-                    Name = detail.Name,
-                    Price = detail.Price,
-                    FamilyFriendly = detail.FamilyFriendly,
-                    Console = detail.Console
-                };
-            return View(model);
+            var service = CreateProductService().GetProductById(id);
+
+            List<RentalOrder> orders = (new RentalOrderService()).GetRentalOrderList().ToList();
+            ViewBag.RentalOrderId = orders.Select(o => new SelectListItem()
+            {
+                Value = o.RentalOrderId.ToString(),
+                Text = o.Name,
+                Selected = service.RentalOrderId == o.RentalOrderId
+            });
+
+            return View(new ProductEdit
+            {
+                RentalOrderId = service.RentalOrderId,
+                ProductId = service.ProductId,
+                Name = service.Name,
+                Price = service.Price,
+                Console = service.Console,
+                FamilyFriendly = service.FamilyFriendly
+            });
         }
 
         [HttpPost]

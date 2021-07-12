@@ -172,6 +172,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\RentalOrderController.cs" />
+    <Compile Include="Controllers\RentalStoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -181,10 +183,19 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-darkly.css" />
+    <Content Include="Content\bootstrap-new.css" />
+    <Content Include="Content\bootstrap-realslate.css" />
+    <Content Include="Content\bootstrap-sketch.css" />
+    <Content Include="Content\bootstrap-super.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-vapor.css" />
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min-slate.css" />
+    <Content Include="Content\bootstrap.min-vapor.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\denise-jans-uIemlFWQSC4-unsplash.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -246,6 +257,16 @@
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\RentalOrder\Index.cshtml" />
+    <Content Include="Views\RentalOrder\Create.cshtml" />
+    <Content Include="Views\RentalOrder\Details.cshtml" />
+    <Content Include="Views\RentalOrder\Edit.cshtml" />
+    <Content Include="Views\RentalOrder\Delete.cshtml" />
+    <Content Include="Views\RentalStore\Index.cshtml" />
+    <Content Include="Views\RentalStore\Create.cshtml" />
+    <Content Include="Views\RentalStore\Details.cshtml" />
+    <Content Include="Views\RentalStore\Edit.cshtml" />
+    <Content Include="Views\RentalStore\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

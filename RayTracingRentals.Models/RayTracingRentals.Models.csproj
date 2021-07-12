@@ -54,15 +54,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Customer\CustomerCreate.cs" />
-    <Compile Include="Customer\CustomerDetail.cs" />
-    <Compile Include="Customer\CustomerEdit.cs" />
-    <Compile Include="Customer\CustomerListItem.cs" />
-    <Compile Include="Product\ProductCreate.cs" />
-    <Compile Include="Product\ProductDetail.cs" />
-    <Compile Include="Product\ProductEdit.cs" />
-    <Compile Include="Product\ProductListItem.cs" />
+    <Compile Include="Customers\CustomerCreate.cs" />
+    <Compile Include="Customers\CustomerDetail.cs" />
+    <Compile Include="Customers\CustomerEdit.cs" />
+    <Compile Include="Customers\CustomerListItem.cs" />
+    <Compile Include="Products\ProductCreate.cs" />
+    <Compile Include="Products\ProductDetail.cs" />
+    <Compile Include="Products\ProductEdit.cs" />
+    <Compile Include="Products\ProductListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentalOrders\RentalOrderCreate.cs" />
+    <Compile Include="RentalOrders\RentalOrderDetail.cs" />
+    <Compile Include="RentalOrders\RentalOrderEdit.cs" />
+    <Compile Include="RentalOrders\RentalOrderListItem.cs" />
+    <Compile Include="TheRentalStore\RentalStoreCreate.cs" />
+    <Compile Include="TheRentalStore\RentalStoreDetail.cs" />
+    <Compile Include="TheRentalStore\RentalStoreEdit.cs" />
+    <Compile Include="TheRentalStore\RentalStoreListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

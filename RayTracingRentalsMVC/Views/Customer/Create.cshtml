@@ -1,20 +1,29 @@
-﻿@model RayTracingRentals.Models.Customer.CustomerCreate
-
+﻿@model RayTracingRentals.Models.Customers.CustomerCreate
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Hello, @User.Identity.GetUserName()!</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
 <div class="form-horizontal">
-    <h4>CustomerCreate</h4>
+    <h4>Create a Customer</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RentalOrderId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.RentalOrderId, ViewBag.RentalOrderId as SelectList, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RentalOrderId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
     <div class="form-group">
         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">

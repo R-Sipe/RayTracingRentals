@@ -1,0 +1,87 @@
+﻿@model RayTracingRentals.Models.TheRentalStore.RentalStoreDetail
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Hello, @User.Identity.GetUserName()!</h2>
+
+<div>
+    <h4>Rental Store Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RentalStoreId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RentalStoreId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StoreName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoreName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Website)
+        </dd>
+
+        @foreach (var a in Model.RentalOrders)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => a.RentalOrderId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.RentalOrderId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Clerk)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Clerk)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Created)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Created)
+            </dd>
+        }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RentalStoreId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

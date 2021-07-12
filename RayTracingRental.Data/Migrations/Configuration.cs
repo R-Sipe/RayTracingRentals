@@ -10,7 +10,6 @@ namespace RayTracingRental.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "RayTracingRentals.Data.ApplicationDbContext";
         }
 
         protected override void Seed(RayTracingRentals.Data.ApplicationDbContext context)

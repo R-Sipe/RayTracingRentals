@@ -1,0 +1,127 @@
+﻿@model RayTracingRentals.Models.RentalOrders.RentalOrderDetail
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Hello, @User.Identity.GetUserName()!</h2>
+
+<div>
+    <h4>Rental Order Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RentalOrderId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RentalOrderId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clerk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clerk)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Created)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Returned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Returned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+        @foreach (var a in Model.Customers)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => a.CustomerId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.CustomerId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.PaymentType)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.PaymentType)
+            </dd>
+        }
+
+        @foreach (var a in Model.Products)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => a.ProductId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.ProductId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Price)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Price)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.FamilyFriendly)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.FamilyFriendly)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => a.Console)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => a.Console)
+            </dd>
+        }
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RentalOrderId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
