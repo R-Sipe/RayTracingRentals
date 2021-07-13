@@ -6,9 +6,10 @@
     <h1>Welcome to Ray-Tracing Rentals!</h1>
     <p class="lead">Ray-Tracing Rentals is a up and coming game rental service! FIrst, register a account, then to create, view, update, or delete a rental store please click the Rental Store button below or the Store button on the navigation bar.</p>
     @if (User.Identity.IsAuthenticated)
-            {
-                <p><a class="btn btn-primary btn-lg" @Html.ActionLink("Rental Store", "Index", "RentalStore")</a></p>
-            }
+    {
+        @*<p><a class="btn btn-primary btn-lg" @Html.ActionLink("Rental Store", "Index", "RentalStore")></a></p>*@
+        <input type="button" class="btn btn-primary btn-lg" onclick="location.href='@Html.ActionLink("Rental Store", "Index", "RentalStore")'" />
+    }
 </div>
 
 <div class="row">
