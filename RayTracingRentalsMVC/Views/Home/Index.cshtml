@@ -8,7 +8,7 @@
     @if (User.Identity.IsAuthenticated)
     {
         @*<p><a class="btn btn-primary btn-lg" @Html.ActionLink("Rental Store", "Index", "RentalStore")></a></p>*@
-        <input type="button" class="btn btn-primary btn-lg" onclick="location.href='@Html.ActionLink("Rental Store", "Index", "RentalStore")'" />
+        <input type="button" class="btn btn-info" value="Rental Store" onclick="location.href='@Url.Action("Index", "RentalStore")'" />
     }
 </div>
 
