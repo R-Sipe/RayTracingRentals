@@ -56,31 +56,6 @@
   <ItemGroup>
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202107011904541_HelpMeMigration.cs" />
-    <Compile Include="Migrations\202107011904541_HelpMeMigration.Designer.cs">
-      <DependentUpon>202107011904541_HelpMeMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107011912168_HelpMigration.cs" />
-    <Compile Include="Migrations\202107011912168_HelpMigration.Designer.cs">
-      <DependentUpon>202107011912168_HelpMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107011952000_HelMigration.cs" />
-    <Compile Include="Migrations\202107011952000_HelMigration.Designer.cs">
-      <DependentUpon>202107011952000_HelMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107012052278_HpMigration.cs" />
-    <Compile Include="Migrations\202107012052278_HpMigration.Designer.cs">
-      <DependentUpon>202107012052278_HpMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107021348469_YOniceMigration.cs" />
-    <Compile Include="Migrations\202107021348469_YOniceMigration.Designer.cs">
-      <DependentUpon>202107021348469_YOniceMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107061947392_UiMigration.cs" />
-    <Compile Include="Migrations\202107061947392_UiMigration.Designer.cs">
-      <DependentUpon>202107061947392_UiMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentalOrder.cs" />
@@ -89,26 +64,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107011904541_HelpMeMigration.resx">
-      <DependentUpon>202107011904541_HelpMeMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107011912168_HelpMigration.resx">
-      <DependentUpon>202107011912168_HelpMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107011952000_HelMigration.resx">
-      <DependentUpon>202107011952000_HelMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107012052278_HpMigration.resx">
-      <DependentUpon>202107012052278_HpMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107021348469_YOniceMigration.resx">
-      <DependentUpon>202107021348469_YOniceMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107061947392_UiMigration.resx">
-      <DependentUpon>202107061947392_UiMigration.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
