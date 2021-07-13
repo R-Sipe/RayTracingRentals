@@ -19,7 +19,7 @@
         </p>
         @if (User.Identity.IsAuthenticated)
         {
-            <input type="button" class="btn btn-primary btn-lg" value="Rental Order" onclick="location.href='@Url.Action("Index", "RentalOrder")'" />
+            <input type="button" class="btn btn-default" value="Rental Order" onclick="location.href='@Url.Action("Index", "RentalOrder")'" />
         }
 
     </div>
@@ -28,7 +28,7 @@
         <p>This is where you can create, view, update, and delete a product, each product will need a rental order before creating.</p>
         @if (User.Identity.IsAuthenticated)
         {
-            <input type="button" class="btn btn-primary btn-lg" value="Product" onclick="location.href='@Url.Action("Index", "Product")'" />
+            <input type="button" class="btn btn-default" value="Product" onclick="location.href='@Url.Action("Index", "Product")'" />
         }
     </div>
     <div class="col-md-4">
@@ -36,7 +36,7 @@
         <p>This is where a customer can be created, viewed, updated, and deleted. You will also need to create a rental order before creating a customer.</p>
         @if (User.Identity.IsAuthenticated)
         {
-            <input type="button" class="btn btn-primary btn-lg" value="Customer" onclick="location.href='@Url.Action("Index", "Customer")'" />
+            <input type="button" class="btn btn-default" value="Customer" onclick="location.href='@Url.Action("Index", "Customer")'" />
         }
     </div>
 </div>
