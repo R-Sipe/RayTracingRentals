@@ -36,7 +36,7 @@
         <p>This is where a customer can be created, viewed, updated, and deleted. You will also need to create a rental order before creating a customer.</p>
         @if (User.Identity.IsAuthenticated)
         {
-            <p> @Html.ActionLink("Customer", "Index", "Customer") <a class="btn btn-default"></a></p>
+            <p><a class="btn btn-default"> @Html.ActionLink("Customer", "Index", "Customer")</a></p>
         }
         </div>
 </div>
